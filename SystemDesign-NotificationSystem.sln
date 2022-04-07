@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D1B75012-9F72-49A1-BC08-C15F2B96B29B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{AAF23B6F-4368-4999-ABF9-D73AC19B2AC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{88954473-B6EA-4BDD-8218-D66E05D38206}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{492ECBA2-00BF-44C2-B064-B922353D8C4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workers", "Workers", "{4FC597FB-E3C3-4AC5-8AE9-8B70B2DC6DAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SDKs", "SDKs", "{6356C4F1-DB2A-4CC3-9851-3955DB9575BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notifications.API", "src\Services\Notifications.API\Notifications.API.csproj", "{FD542A81-F9B8-4165-9C7C-8EBC298053AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD542A81-F9B8-4165-9C7C-8EBC298053AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD542A81-F9B8-4165-9C7C-8EBC298053AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD542A81-F9B8-4165-9C7C-8EBC298053AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD542A81-F9B8-4165-9C7C-8EBC298053AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{88954473-B6EA-4BDD-8218-D66E05D38206} = {D1B75012-9F72-49A1-BC08-C15F2B96B29B}
+		{492ECBA2-00BF-44C2-B064-B922353D8C4E} = {D1B75012-9F72-49A1-BC08-C15F2B96B29B}
+		{4FC597FB-E3C3-4AC5-8AE9-8B70B2DC6DAE} = {D1B75012-9F72-49A1-BC08-C15F2B96B29B}
+		{6356C4F1-DB2A-4CC3-9851-3955DB9575BD} = {D1B75012-9F72-49A1-BC08-C15F2B96B29B}
+		{FD542A81-F9B8-4165-9C7C-8EBC298053AE} = {88954473-B6EA-4BDD-8218-D66E05D38206}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF36FC44-417D-45EC-A194-1AF4F729C6C4}
+	EndGlobalSection
+EndGlobal
