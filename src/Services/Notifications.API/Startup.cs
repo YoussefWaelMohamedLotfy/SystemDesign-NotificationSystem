@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Notifications.API.Data;
+using Notifications.API.Data.Repository;
 using System.Reflection;
 
 namespace Notifications.API;
@@ -22,6 +23,7 @@ public class Startup
         services.AddDbContext<AppDbContext>(o => 
             o.UseSqlServer(Configuration.GetConnectionString("SqlServerConnection")));
 
+        services.AddScoped<IUserRepository, UserRepository>();
 
         services.AddControllers(options =>
         {
