@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using Microsoft.EntityFrameworkCore;
+using Notifications.API.Data;
+using System.Reflection;
 
 namespace Notifications.API;
 
@@ -17,6 +19,10 @@ public class Startup
     /// <param name="services"></param>
     public void ConfigureServices(IServiceCollection services)
     {
+        services.AddDbContext<AppDbContext>(o => 
+            o.UseSqlServer(Configuration.GetConnectionString("SqlServerConnection")));
+
+
         services.AddControllers(options =>
         {
             options.UseNamespaceRouteToken();

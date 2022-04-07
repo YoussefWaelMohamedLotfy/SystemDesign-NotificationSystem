@@ -25,7 +25,6 @@
   <ItemGroup>
 	<Folder Include="Endpoints\V1\Notifications\" />
 	<Folder Include="Endpoints\V1\Users\" />
-	<Folder Include="Data\" />
   </ItemGroup>
 
 </Project>
