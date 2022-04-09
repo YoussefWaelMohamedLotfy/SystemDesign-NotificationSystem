@@ -14,9 +14,11 @@ public class UserRepository : IUserRepository
         _db = _context.Set<User>();
     }
 
-    public async Task<User?> GetUserById(int id, CancellationToken ct) => await _db.FindAsync(id, ct);
+    public async Task<User?> GetUserById(int id, CancellationToken ct = default) 
+        => await _db.Include(u => u.Settings).SingleOrDefaultAsync(u => u.ID == id, ct);
 
-    public async Task AddAsync(User user, CancellationToken ct) => await _db.AddAsync(user, ct);
+    public async Task AddAsync(User user, CancellationToken ct = default) 
+        => await _db.AddAsync(user, ct);
 
     public User Update(User user)
     {
@@ -28,5 +30,6 @@ public class UserRepository : IUserRepository
 
     public void Delete(User user) => _db.Remove(user);
 
-    public async Task<int> CompleteChangesAsync(CancellationToken ct) => await _context.SaveChangesAsync(ct);
+    public async Task<int> CompleteChangesAsync(CancellationToken ct = default)
+        => await _context.SaveChangesAsync(ct);
 }
