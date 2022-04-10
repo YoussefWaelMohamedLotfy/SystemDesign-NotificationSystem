@@ -2,7 +2,7 @@
 
 public record CreateNotificationSettingRequest
 {
-    public string Channel { get; set; } = default!;
+    public string Channel { get; init; } = default!;
 
-    public bool IsOptIn { get; set; }
+    public bool IsOptIn { get; init; }
 }

@@ -85,7 +85,6 @@ public class PostTests
 
             Assert.That(response, Is.Not.Null);
             Assert.That(response, Is.InstanceOf<ActionResult<CreateUserResponse>>());
-
         });
     }
 

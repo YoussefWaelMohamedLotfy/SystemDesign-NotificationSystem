@@ -2,10 +2,7 @@
 
 namespace Notifications.Core.Responses;
 
-public record CreateUserResponse : CreateUserRequest
+public record UpdateUserResponse : CreateUserRequest
 {
     public int ID { get; init; }
-
-    public DateTimeOffset CreatedAt { get; init; }
-
 }

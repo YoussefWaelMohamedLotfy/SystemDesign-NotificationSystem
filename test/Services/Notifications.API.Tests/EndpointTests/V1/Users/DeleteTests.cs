@@ -13,7 +13,7 @@ namespace Notifications.API.Tests.EndpointTests.V1.Users;
 public class DeleteTests
 {
     private Delete DELETEendpoint = default!;
-    private Mock<IUserRepository> _userRepositoryMock;
+    private Mock<IUserRepository> _userRepositoryMock = default!;
 
 
     [SetUp]

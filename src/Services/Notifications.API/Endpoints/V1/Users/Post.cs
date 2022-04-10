@@ -21,7 +21,7 @@ public class Post : EndpointBaseAsync.WithRequest<CreateUserRequest>.WithActionR
 
 
     [HttpPost("/api/[namespace]")]
-    public override async Task<ActionResult<CreateUserResponse>> HandleAsync(CreateUserRequest request, CancellationToken cancellationToken = default)
+    public override async Task<ActionResult<CreateUserResponse>> HandleAsync([FromBody] CreateUserRequest request, CancellationToken cancellationToken = default)
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
