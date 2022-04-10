@@ -48,11 +48,13 @@ public class PostTests
             _mapperMock.Verify(x => x.Map<CreateUserResponse>(testUser), Times.Once);
 
             _userRepositoryMock.Verify(x => x.AddAsync(testUser, default), Times.Once);
+            _userRepositoryMock.Verify(x => x.CompleteChangesAsync(default), Times.Once);
 
             Assert.That(data, Is.InstanceOf<CreateUserResponse>());
 
             Assert.That(result, Is.Not.Null);
             Assert.That(result, Is.InstanceOf<CreatedAtRouteResult>());
+            Assert.That(result.RouteName, Is.EqualTo("Users_Get"));
 
             Assert.That(response, Is.Not.Null);
             Assert.That(response, Is.InstanceOf<ActionResult<CreateUserResponse>>());
@@ -76,6 +78,7 @@ public class PostTests
             _mapperMock.Verify(x => x.Map<CreateUserResponse>(testUser), Times.Never);
 
             _userRepositoryMock.Verify(x => x.AddAsync(testUser, default), Times.Never);
+            _userRepositoryMock.Verify(x => x.CompleteChangesAsync(default), Times.Never);
 
             Assert.That(result, Is.Not.Null);
             Assert.That(result, Is.InstanceOf<BadRequestObjectResult>());
