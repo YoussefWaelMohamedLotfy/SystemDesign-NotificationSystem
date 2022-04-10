@@ -13,6 +13,7 @@
 
   <ItemGroup>
 	<PackageReference Include="Ardalis.ApiEndpoints.Swashbuckle" Version="4.0.1" />
+	<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.3" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.3" />
@@ -24,6 +25,10 @@
 
   <ItemGroup>
 	<Folder Include="Endpoints\V1\Notifications\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\SDKs\Notifications.Core\Notifications.Core.csproj" />
   </ItemGroup>
 
 </Project>

@@ -13,7 +13,7 @@ namespace Notifications.API.Endpoints.V1.Users
             _repo = repo ?? throw new ArgumentNullException(nameof(repo));
         }
 
-        [HttpGet("/api/[namespace]/{id}")]
+        [HttpGet("/api/[namespace]/{id}", Name = "[namespace]_[controller]")]
         public override async Task<ActionResult> HandleAsync(int id, CancellationToken cancellationToken = default)
         {
             var user = await _repo.GetUserById(id, cancellationToken);

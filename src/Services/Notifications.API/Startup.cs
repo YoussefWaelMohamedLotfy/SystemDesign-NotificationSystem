@@ -30,6 +30,8 @@ public class Startup
             options.UseNamespaceRouteToken();
         });
 
+        services.AddAutoMapper(typeof(Startup));
+
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(options =>
         {
