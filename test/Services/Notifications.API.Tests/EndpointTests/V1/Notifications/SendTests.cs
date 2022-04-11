@@ -1,4 +1,5 @@
-﻿using MassTransit;
+﻿using EventBus.RabbitMQ.Events;
+using MassTransit;
 using Notifications.API.Endpoints.V1.Notifications;
 using System.Threading;
 

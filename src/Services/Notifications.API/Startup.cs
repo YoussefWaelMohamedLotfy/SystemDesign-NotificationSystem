@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Notifications.API.Data;
 using Notifications.API.Data.Repository;
 using System.Reflection;
+using System.Text.Json.Serialization;
 
 namespace Notifications.API;
 
@@ -29,7 +30,9 @@ public class Startup
         services.AddControllers(options =>
         {
             options.UseNamespaceRouteToken();
-        });
+            options.RespectBrowserAcceptHeader = true;
+        })
+        .AddJsonOptions(o => o.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
         services.AddAutoMapper(typeof(Startup));
 

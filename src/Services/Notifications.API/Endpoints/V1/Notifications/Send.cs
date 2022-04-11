@@ -1,8 +1,8 @@
 ﻿using Ardalis.ApiEndpoints;
+using EventBus.RabbitMQ.Events;
 using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using Notifications.API.Data.Repository;
-using Notifications.API.Models;
 
 namespace Notifications.API.Endpoints.V1.Notifications;
 
