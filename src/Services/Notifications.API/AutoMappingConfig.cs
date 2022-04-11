@@ -20,5 +20,7 @@ public class AutoMappingConfig : Profile
         CreateMap<NotificationSetting, CreateNotificationSettingResponse>();
         CreateMap<User, UpdateUserResponse>();
         CreateMap<NotificationSetting, UpdateNotificationSettingResponse>();
+        CreateMap<User, GetUserResponse>();
+        CreateMap<NotificationSetting, GetNotificationSettingResponse>();
     }
 }

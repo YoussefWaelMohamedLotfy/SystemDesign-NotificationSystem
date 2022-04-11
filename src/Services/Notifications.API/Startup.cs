@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Notifications.API.Data;
 using Notifications.API.Data.Repository;
 using System.Reflection;
-using System.Text.Json.Serialization;
 
 namespace Notifications.API;
 
@@ -22,7 +21,7 @@ public class Startup
     /// <param name="services"></param>
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddDbContext<AppDbContext>(o => 
+        services.AddDbContext<AppDbContext>(o =>
             o.UseSqlServer(Configuration.GetConnectionString("SqlServerConnection")));
 
         services.AddScoped<IUserRepository, UserRepository>();
@@ -30,9 +29,7 @@ public class Startup
         services.AddControllers(options =>
         {
             options.UseNamespaceRouteToken();
-            options.RespectBrowserAcceptHeader = true;
-        })
-        .AddJsonOptions(o => o.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+        });
 
         services.AddAutoMapper(typeof(Startup));
 

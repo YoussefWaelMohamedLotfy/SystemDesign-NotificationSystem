@@ -31,6 +31,8 @@ public class AutoMappingConfigTests
             cfg.CreateMap<NotificationSetting, UpdateNotificationSettingResponse>(MemberList.Source)
                 .ForSourceMember(x => x.UserID, opt => opt.DoNotValidate())
                 .ForSourceMember(x => x.User, opt => opt.DoNotValidate());
+            cfg.CreateMap<User, GetUserResponse>();
+            cfg.CreateMap<NotificationSetting, GetNotificationSettingResponse>();
         });
 
     }
