@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MassTransit;
+using Microsoft.EntityFrameworkCore;
 using Notifications.API.Data;
 using Notifications.API.Data.Repository;
 using System.Reflection;
@@ -31,6 +32,20 @@ public class Startup
         });
 
         services.AddAutoMapper(typeof(Startup));
+
+        services.AddMassTransit(x =>
+        {
+            x.UsingRabbitMq((context, cfg) =>
+            {
+                cfg.Host("localhost", "/", h =>
+                {
+                    h.Username("guest");
+                    h.Password("guest");
+                });
+
+                cfg.ConfigureEndpoints(context);
+            });
+        });
 
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(options =>

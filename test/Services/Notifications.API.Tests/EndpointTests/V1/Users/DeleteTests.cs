@@ -1,13 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Moq;
-using Notifications.API.Data.Repository;
-using Notifications.API.Endpoints.V1.Users;
-using Notifications.API.Models;
-using NUnit.Framework;
-using System;
-using System.Threading.Tasks;
-
-namespace Notifications.API.Tests.EndpointTests.V1.Users;
+﻿namespace Notifications.API.Tests.EndpointTests.V1.Users;
 
 [TestFixture]
 public class DeleteTests

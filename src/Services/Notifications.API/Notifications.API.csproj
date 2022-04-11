@@ -14,6 +14,8 @@
   <ItemGroup>
 	<PackageReference Include="Ardalis.ApiEndpoints.Swashbuckle" Version="4.0.1" />
 	<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+	<PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
+	<PackageReference Include="MassTransit.RabbitMQ" Version="8.0.1" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.3" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.3" />
@@ -21,10 +23,6 @@
 	<PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
 	<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
 	<PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="7.0.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-	<Folder Include="Endpoints\V1\Notifications\" />
   </ItemGroup>
 
   <ItemGroup>

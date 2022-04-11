@@ -1,14 +1,6 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-using Moq;
-using Notifications.API.Data.Repository;
-using Notifications.API.Endpoints.V1.Users;
-using Notifications.API.Models;
 using Notifications.Core.Requests;
 using Notifications.Core.Responses;
-using NUnit.Framework;
-using System;
-using System.Threading.Tasks;
 
 namespace Notifications.API.Tests.EndpointTests.V1.Users;
 
