@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+	<TargetFramework>net6.0</TargetFramework>
+	<Nullable>enable</Nullable>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<UserSecretsId>dotnet-Worker.SMSService-4F3DDC42-64C1-42B7-A765-9DEDB606EB6C</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="MassTransit.RabbitMQ" Version="8.0.1" />
+	<PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+	<PackageReference Include="Twilio.AspNet.Core" Version="5.73.0" />
+	<PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\SDKs\EventBus.RabbitMQ\EventBus.RabbitMQ.csproj" />
+  </ItemGroup>
+</Project>

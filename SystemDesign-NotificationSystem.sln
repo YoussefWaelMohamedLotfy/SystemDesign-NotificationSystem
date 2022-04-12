@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker.EmailService", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus.RabbitMQ", "src\SDKs\EventBus.RabbitMQ\EventBus.RabbitMQ.csproj", "{45A6239D-8D2B-42A8-8E52-33A9732E1E94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker.SMSService", "src\Workers\Worker.SMSService\Worker.SMSService.csproj", "{C785D313-145A-44B0-B9D8-E2F5C1F68802}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{45A6239D-8D2B-42A8-8E52-33A9732E1E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45A6239D-8D2B-42A8-8E52-33A9732E1E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45A6239D-8D2B-42A8-8E52-33A9732E1E94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C785D313-145A-44B0-B9D8-E2F5C1F68802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C785D313-145A-44B0-B9D8-E2F5C1F68802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C785D313-145A-44B0-B9D8-E2F5C1F68802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C785D313-145A-44B0-B9D8-E2F5C1F68802}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +74,7 @@ Global
 		{BC1E6A93-1B9C-4C57-9755-8C8C639F8739} = {8DDF3CE8-E0FF-4B65-9A1E-D2450A054AE0}
 		{CC10EDDD-8392-4F3B-B813-E913945C3089} = {4FC597FB-E3C3-4AC5-8AE9-8B70B2DC6DAE}
 		{45A6239D-8D2B-42A8-8E52-33A9732E1E94} = {6356C4F1-DB2A-4CC3-9851-3955DB9575BD}
+		{C785D313-145A-44B0-B9D8-E2F5C1F68802} = {4FC597FB-E3C3-4AC5-8AE9-8B70B2DC6DAE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF36FC44-417D-45EC-A194-1AF4F729C6C4}
