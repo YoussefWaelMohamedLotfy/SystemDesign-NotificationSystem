@@ -1,0 +1,21 @@
+name: systemdesign-notificationsystem
+services:
+- name: notifications-api
+  project: src/Services/Notifications.API/Notifications.API.csproj
+  bindings:
+    - port: 7000
+- name: worker-emailservice
+  project: src/Workers/Worker.EmailService/Worker.EmailService.csproj
+  bindings:
+    - port: 7001
+- name: worker-smsservice
+  project: src/Workers/Worker.SMSService/Worker.SMSService.csproj
+  bindings:
+    - port: 7002
+- name: RabbitMQ
+  image: rabbitmq:3.9.14-management
+  bindings:
+    - port: 15672
+      name: Management Port
+    - port: 5672
+      name: rabbitmq port

@@ -13,6 +13,9 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+# Tye files
+.tye/
+
 # Mono auto generated files
 mono_crash.*
 
