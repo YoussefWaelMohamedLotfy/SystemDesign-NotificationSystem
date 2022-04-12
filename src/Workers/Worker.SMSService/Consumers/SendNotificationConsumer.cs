@@ -19,6 +19,13 @@ internal class SendNotificationConsumer : IConsumer<SendNotificationEvent>
 
     public async Task Consume(ConsumeContext<SendNotificationEvent> context)
     {
+        if (context.Message.Settings.Channel != "SMS" ||
+            context.Message.Settings.IsOptIn == false)
+        {
+            _logger.LogInformation("Event Message Ignored...");
+            return;
+        }
+
         var messageDetails = await MessageResource.CreateAsync(
                 from: _twilioOptions.FromPhoneNumber,
                 to: context.Message.PhoneNumber,

@@ -29,7 +29,8 @@ public class Send : EndpointBaseAsync.WithRequest<int>.WithActionResult
         {
             userInDB.Name,
             userInDB.EmailAddress,
-            userInDB.PhoneNumber
+            userInDB.PhoneNumber,
+            userInDB.Settings
         }, cancellationToken);
 
         return Accepted();

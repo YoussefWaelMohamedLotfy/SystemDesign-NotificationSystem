@@ -20,6 +20,8 @@ IHost host = Host.CreateDefaultBuilder(args)
 
         services.AddMassTransit(x =>
         {
+            x.SetEndpointNameFormatter(new KebabCaseEndpointNameFormatter(true));
+
             x.AddConsumer<SendNotificationConsumer>();
 
             x.UsingRabbitMq((context, cfg) =>

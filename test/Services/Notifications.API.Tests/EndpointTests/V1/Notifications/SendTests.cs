@@ -12,7 +12,6 @@ public class SendTests
     private Mock<IUserRepository> _userRepositoryMock = default!;
     private Mock<IPublishEndpoint> _publishEndpointMock = default!;
 
-
     [SetUp]
     public void Setup()
     {

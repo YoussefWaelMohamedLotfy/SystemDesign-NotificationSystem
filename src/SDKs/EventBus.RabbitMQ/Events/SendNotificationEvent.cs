@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EventBus.RabbitMQ.Events;
+﻿namespace EventBus.RabbitMQ.Events;
 
 public interface SendNotificationEvent
 {
@@ -13,4 +7,6 @@ public interface SendNotificationEvent
     string EmailAddress { get; }
 
     string PhoneNumber { get; }
+
+    NotificationSettings Settings { get; }
 }
