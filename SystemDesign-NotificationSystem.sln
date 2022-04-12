@@ -23,13 +23,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{8D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notifications.API.Tests", "test\Services\Notifications.API.Tests\Notifications.API.Tests.csproj", "{BC1E6A93-1B9C-4C57-9755-8C8C639F8739}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker.EmailService", "src\Workers\Worker.EmailService\Worker.EmailService.csproj", "{CC10EDDD-8392-4F3B-B813-E913945C3089}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Worker.EmailService", "src\Workers\Worker.EmailService\Worker.EmailService.csproj", "{CC10EDDD-8392-4F3B-B813-E913945C3089}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus.RabbitMQ", "src\SDKs\EventBus.RabbitMQ\EventBus.RabbitMQ.csproj", "{45A6239D-8D2B-42A8-8E52-33A9732E1E94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.RabbitMQ", "src\SDKs\EventBus.RabbitMQ\EventBus.RabbitMQ.csproj", "{45A6239D-8D2B-42A8-8E52-33A9732E1E94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker.SMSService", "src\Workers\Worker.SMSService\Worker.SMSService.csproj", "{C785D313-145A-44B0-B9D8-E2F5C1F68802}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Worker.SMSService", "src\Workers\Worker.SMSService\Worker.SMSService.csproj", "{C785D313-145A-44B0-B9D8-E2F5C1F68802}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workers", "Workers", "{2B7CE573-13E5-4A29-9DC0-390143046ED3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notifications.UI", "src\Apps\Notifications.UI\Notifications.UI.csproj", "{01A72124-7A9F-4723-9B2C-A74D59FD1340}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{C785D313-145A-44B0-B9D8-E2F5C1F68802}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C785D313-145A-44B0-B9D8-E2F5C1F68802}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C785D313-145A-44B0-B9D8-E2F5C1F68802}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01A72124-7A9F-4723-9B2C-A74D59FD1340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A72124-7A9F-4723-9B2C-A74D59FD1340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A72124-7A9F-4723-9B2C-A74D59FD1340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A72124-7A9F-4723-9B2C-A74D59FD1340}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +84,7 @@ Global
 		{45A6239D-8D2B-42A8-8E52-33A9732E1E94} = {6356C4F1-DB2A-4CC3-9851-3955DB9575BD}
 		{C785D313-145A-44B0-B9D8-E2F5C1F68802} = {4FC597FB-E3C3-4AC5-8AE9-8B70B2DC6DAE}
 		{2B7CE573-13E5-4A29-9DC0-390143046ED3} = {AAF23B6F-4368-4999-ABF9-D73AC19B2AC0}
+		{01A72124-7A9F-4723-9B2C-A74D59FD1340} = {492ECBA2-00BF-44C2-B064-B922353D8C4E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF36FC44-417D-45EC-A194-1AF4F729C6C4}
