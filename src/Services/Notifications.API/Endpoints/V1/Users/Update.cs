@@ -18,6 +18,15 @@ public class Update : EndpointBaseAsync.WithRequest<UpdateUserRequest>.WithActio
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
     }
 
+    /// <summary>
+    /// Update an existing User
+    /// </summary>
+    /// <param name="request"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    /// <response code="200">User Updated Success</response>
+    /// <response code="400">User Object has errors</response>
+    /// <response code="404">User Not Found</response>
     [HttpPut("/api/[namespace]")]
     public override async Task<ActionResult<UpdateUserResponse>> HandleAsync([FromBody] UpdateUserRequest request, CancellationToken cancellationToken = default)
     {

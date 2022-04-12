@@ -19,7 +19,14 @@ public class Post : EndpointBaseAsync.WithRequest<CreateUserRequest>.WithActionR
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
     }
 
-
+    /// <summary>
+    /// Creates a new User
+    /// </summary>
+    /// <param name="request">User Object</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>Create Success</returns>
+    /// <response code="201">Created User Success</response>
+    /// <response code="400">User Object has errors</response>
     [HttpPost("/api/[namespace]")]
     public override async Task<ActionResult<CreateUserResponse>> HandleAsync([FromBody] CreateUserRequest request, CancellationToken cancellationToken = default)
     {

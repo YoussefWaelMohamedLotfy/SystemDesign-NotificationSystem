@@ -13,6 +13,14 @@ public class Delete : EndpointBaseAsync.WithRequest<int>.WithActionResult
         _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
     }
 
+    /// <summary>
+    /// Deletes an existing User
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    /// <response code="202">User Deleted Success</response>
+    /// <response code="404">User Not Found</response>
     [HttpDelete("/api/[namespace]/{id}")]
     public override async Task<ActionResult> HandleAsync(int id, CancellationToken cancellationToken = default)
     {

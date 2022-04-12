@@ -6,7 +6,7 @@ using Notifications.Core.Responses;
 
 namespace Notifications.API.Endpoints.V1.Users
 {
-    public class Get : EndpointBaseAsync.WithRequest<int>.WithActionResult
+    public class Get : EndpointBaseAsync.WithRequest<int>.WithActionResult<GetUserResponse>
     {
         private readonly IUserRepository _repo;
         private readonly IMapper _mapper;
@@ -17,8 +17,16 @@ namespace Notifications.API.Endpoints.V1.Users
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
+        /// <summary>
+        /// Finds a User by his ID
+        /// </summary>
+        /// <param name="id">User's ID</param>
+        /// <param name="cancellationToken"></param>
+        /// <returns>User Response</returns>
+        /// <response code="200">User Found</response>
+        /// <response code="404">User Not Found</response>
         [HttpGet("/api/[namespace]/{id}", Name = "[namespace]_[controller]")]
-        public override async Task<ActionResult> HandleAsync(int id, CancellationToken cancellationToken = default)
+        public override async Task<ActionResult<GetUserResponse>> HandleAsync(int id, CancellationToken cancellationToken = default)
         {
             var user = await _repo.GetUserById(id, cancellationToken);
 

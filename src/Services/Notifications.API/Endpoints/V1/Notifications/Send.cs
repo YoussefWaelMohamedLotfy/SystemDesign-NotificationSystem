@@ -17,6 +17,14 @@ public class Send : EndpointBaseAsync.WithRequest<int>.WithActionResult
         _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
     }
 
+    /// <summary>
+    /// Sends a notification to User with ID
+    /// </summary>
+    /// <param name="userID"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    /// <response code="204">Notification Sent to User</response>
+    /// <response code="404">User Not Found</response>
     [HttpPost("/api/[namespace]/Send/{userID}")]
     public override async Task<ActionResult> HandleAsync(int userID, CancellationToken cancellationToken = default)
     {
