@@ -28,17 +28,17 @@ public class GetTests
         _mapperMock.Setup(x => x.Map<GetUserResponse>(testUser))
             .Returns(new GetUserResponse { ID = 3, Name = "Henry" });
 
-        var result = await usersGETendpoint.HandleAsync(3) as ObjectResult;
-        var res = result!.Value;
+        var response = await usersGETendpoint.HandleAsync(3);
+        var res = response!.Result;
 
         Assert.Multiple(() =>
         {
             _userRepoMock.Verify(x => x.GetUserById(3, default), Times.Once);
             _mapperMock.Verify(x => x.Map<GetUserResponse>(testUser), Times.Once);
 
-            Assert.That(result, Is.InstanceOf<OkObjectResult>());
+            Assert.That(response, Is.InstanceOf<ActionResult<GetUserResponse>>());
             Assert.That(res, Is.Not.Null);
-            Assert.That(res, Is.InstanceOf<GetUserResponse>());
+            Assert.That(res, Is.InstanceOf<OkObjectResult>());
         });
     }
 
@@ -49,11 +49,15 @@ public class GetTests
             .ReturnsAsync(() => null);
         _mapperMock.Setup(x => x.Map<GetUserResponse>(It.IsAny<User>())).Returns(It.IsAny<GetUserResponse>());
 
-        var result = await usersGETendpoint.HandleAsync(3) as NotFoundResult;
+        var response = await usersGETendpoint.HandleAsync(3);
+        var result = response.Result;
 
         Assert.Multiple(() =>
         {
             _userRepoMock.Verify(x => x.GetUserById(3, default), Times.Once);
+
+            Assert.That(response, Is.Not.Null);
+            Assert.That(response, Is.InstanceOf<ActionResult<GetUserResponse>>());
 
             Assert.That(result, Is.Not.Null);
             Assert.That(result, Is.InstanceOf<NotFoundResult>());
