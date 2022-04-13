@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Tye.Extensions.Configuration" Version="0.10.0-alpha.21420.1" />
     <PackageReference Include="Refit.HttpClientFactory" Version="6.3.2" />
   </ItemGroup>
 

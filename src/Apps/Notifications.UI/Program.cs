@@ -7,9 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddRefitClient<IUsersApi>()
-    .ConfigureHttpClient(c => c.BaseAddress = new Uri("https://localhost:7069"));
+    .ConfigureHttpClient(c => c.BaseAddress = builder.Configuration.GetServiceUri("notifications-api"));
 builder.Services.AddRefitClient<INotificationsApi>()
-    .ConfigureHttpClient(c => c.BaseAddress = new Uri("https://localhost:7069"));
+    .ConfigureHttpClient(c => c.BaseAddress = builder.Configuration.GetServiceUri("notifications-api"));
 
 var app = builder.Build();
 
