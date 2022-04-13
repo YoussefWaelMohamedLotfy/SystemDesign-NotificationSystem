@@ -23,8 +23,8 @@ public class UpdateTests
     public async Task ExecutePut_PassUpdateUserRequest_ReturnsOkResponse()
     {
         UpdateUserRequest testRequest = new() { ID = 30, Name = "Jeremy", Settings = new() { Channel = "Email", IsOptIn = true } };
-        User testUser = new() { ID = 30, Name = "Hany", Settings = new() { Channel = "SMS", IsOptIn = false } };
-        User updatedTestUser = new() { ID = 30, Name = "Jeremy", Settings = new() { Channel = "Email", IsOptIn = true } };
+        User testUser = new() { ID = 30, Name = "Hany", Settings = new() { Channel = NotificationChannel.SMS, IsOptIn = false } };
+        User updatedTestUser = new() { ID = 30, Name = "Jeremy", Settings = new() { Channel = NotificationChannel.Email, IsOptIn = true } };
         UpdateUserResponse testResponse = new() { ID = 30, Name = "Jeremy", Settings = new() { Channel = "Email", IsOptIn = true } };
 
         _mapperMock.Setup(x => x.Map(testRequest, testUser)).Returns(updatedTestUser);

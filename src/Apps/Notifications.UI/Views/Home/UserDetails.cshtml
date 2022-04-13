@@ -1,0 +1,40 @@
+﻿@model Notifications.Core.Responses.GetUserResponse
+@{
+    ViewData["Title"] = "User Details";
+}
+
+<h1>User Details</h1>
+
+<table class="table table-striped table-hover caption-top">
+    <caption>User with ID: @Model.ID Data</caption>
+    <thead>
+        <tr>
+            <th scope="col">Data</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Name</th>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <th scope="row">Phone Number</th>
+            <td>@Model.PhoneNumber</td>
+        </tr>
+        <tr>
+            <th scope="row">Email Address</th>
+            <td>@Model.EmailAddress</td>
+        </tr>
+        <tr>
+            <th scope="row">Creation Date</th>
+            <td>@Model.CreatedAt</td>
+        </tr>
+        <tr>
+            <th scope="row">Notification Channel</th>
+            <td>@Model.Settings.Channel</td>
+        </tr>
+    </tbody>
+</table>
+
+<a class="btn-primary btn my-3" asp-action="SendNotification" asp-route-id="@Model.ID">Send Notification</a>

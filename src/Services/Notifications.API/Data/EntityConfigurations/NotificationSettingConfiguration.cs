@@ -2,13 +2,13 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Notifications.API.Models;
 
-namespace Notifications.API.Data.EntityConfigurations
+namespace Notifications.API.Data.EntityConfigurations;
+
+public class NotificationSettingConfiguration : IEntityTypeConfiguration<NotificationSetting>
 {
-    public class NotificationSettingConfiguration : IEntityTypeConfiguration<NotificationSetting>
+    public void Configure(EntityTypeBuilder<NotificationSetting> builder)
     {
-        public void Configure(EntityTypeBuilder<NotificationSetting> builder)
-        {
-            builder.HasKey(s => s.UserID);
-        }
+        builder.HasKey(s => s.UserID);
+        builder.Property(s => s.Channel).HasConversion<string>();
     }
 }

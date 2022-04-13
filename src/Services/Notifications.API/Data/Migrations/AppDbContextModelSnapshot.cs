@@ -36,7 +36,7 @@ namespace Notifications.API.Data.Migrations
 
                     b.HasKey("UserID");
 
-                    b.ToTable("NotificationSettings");
+                    b.ToTable("NotificationSettings", (string)null);
                 });
 
             modelBuilder.Entity("Notifications.API.Models.User", b =>
@@ -70,7 +70,7 @@ namespace Notifications.API.Data.Migrations
                     b.HasIndex("PhoneNumber")
                         .IsUnique();
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("Notifications.API.Models.NotificationSetting", b =>

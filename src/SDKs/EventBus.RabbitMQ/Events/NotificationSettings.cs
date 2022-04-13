@@ -2,7 +2,13 @@
 
 public interface NotificationSettings
 {
-    string Channel { get; }
+    NotifcationSetting Channel { get; }
 
     bool IsOptIn { get; }
+}
+
+public enum NotifcationSetting
+{
+    SMS,
+    Email
 }

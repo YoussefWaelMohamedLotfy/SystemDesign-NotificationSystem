@@ -19,7 +19,7 @@ internal class SendNotificationConsumer : IConsumer<SendNotificationEvent>
 
     public async Task Consume(ConsumeContext<SendNotificationEvent> context)
     {
-        if (context.Message.Settings.Channel != "SMS" ||
+        if (context.Message.Settings.Channel != NotifcationSetting.SMS ||
             context.Message.Settings.IsOptIn == false)
         {
             _logger.LogInformation("Event Message Ignored...");
