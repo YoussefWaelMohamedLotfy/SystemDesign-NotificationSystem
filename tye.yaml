@@ -12,6 +12,10 @@ services:
   project: src/Workers/Worker.SMSService/Worker.SMSService.csproj
   bindings:
     - port: 7002
+- name: notifications-ui
+  project: src/Apps/Notifications.UI/Notifications.UI.csproj
+  bindings:
+    - port: 7003
 - name: RabbitMQ
   image: rabbitmq:3.9.14-management
   bindings:
