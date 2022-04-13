@@ -1,7 +1,15 @@
+using Notifications.UI.RefitHttpClients;
+using Refit;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddRefitClient<IUsersApi>()
+    .ConfigureHttpClient(c => c.BaseAddress = new Uri("https://localhost:7069"));
+builder.Services.AddRefitClient<INotificationsApi>()
+    .ConfigureHttpClient(c => c.BaseAddress = new Uri("https://localhost:7069"));
 
 var app = builder.Build();
 
